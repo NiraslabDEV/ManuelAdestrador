@@ -1,26 +1,72 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-yellow: #F5C518;
+  --color-yellow-dark: #D4A017;
+  --font-oswald: var(--font-oswald), sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html {
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer components {
+  .btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: #F5C518;
+    color: #000;
+    font-weight: 700;
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    font-size: 1.125rem;
+    transition: all 0.3s;
+  }
+  .btn-whatsapp:hover {
+    background-color: #D4A017;
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(245, 197, 24, 0.4);
+  }
+  .btn-whatsapp:active {
+    transform: scale(1);
+  }
+
+  .section-title {
+    font-family: var(--font-oswald), sans-serif;
+    font-size: 2.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.025em;
+  }
+
+  .card-service {
+    background-color: #18181b;
+    border: 1px solid #27272a;
+    border-radius: 1rem;
+    padding: 2rem;
+    transition: all 0.3s;
+  }
+  .card-service:hover {
+    border-color: #F5C518;
+    box-shadow: 0 0 40px rgba(245, 197, 24, 0.1);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .font-oswald {
+    font-family: var(--font-oswald), sans-serif;
+  }
+  .text-yellow {
+    color: #F5C518;
+  }
+  .bg-yellow {
+    background-color: #F5C518;
+  }
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 3rem;
+  }
 }
