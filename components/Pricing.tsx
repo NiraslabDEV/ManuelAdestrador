@@ -140,8 +140,11 @@ export default function Pricing() {
                   'bg-[#F5C518] text-black hover:bg-[#D4A017]'
                 )}`}
               >
-                <WhatsAppIcon className="w-5 h-5" />
-                Escolher Plano · Falar no WhatsApp
+                <WhatsAppIcon className="w-5 h-5 flex-shrink-0" />
+                <span className="text-center leading-tight">
+                  Escolher Plano<br />
+                  <span className="font-normal text-sm opacity-80">Falar no WhatsApp</span>
+                </span>
               </a>
             </div>
           ))}
